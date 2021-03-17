@@ -10,9 +10,9 @@ COPY . /app/
 # COPY . nlib /app/
 
 ## Step 3:
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --trusted-host pypi.python.org -r backend/requirements.txt
 # hadolint ignore=DL3013
-RUN python3 -m unittest discover -s ./ -p '*_test.py'
+RUN python3 -m unittest discover -s ./backend -p '*_test.py'
 
 ## Step 4:
 # Expose port 80
