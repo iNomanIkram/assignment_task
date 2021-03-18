@@ -3,7 +3,7 @@ name: backend_ci
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   docker:
@@ -30,4 +30,4 @@ jobs:
         with:
           context: ./backend
           push: true
-          tags: user/app:latest
+          tags: nomanikram/task-backend
