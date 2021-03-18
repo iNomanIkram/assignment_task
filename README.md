@@ -95,6 +95,6 @@ Continous Integration Pipeline created for building the docker image and push it
 
 ![](img/code.png)
 
-![](img/gitaction.png)
+![](img/gitaction.jpg)
 
 
