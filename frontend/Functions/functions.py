@@ -2,7 +2,7 @@ import logging
 
 import arrow
 from elasticsearch import Elasticsearch
-es = Elasticsearch(HOST='http://localhost',PORT=9200)
+es = Elasticsearch(HOST='http://elasticsearch',PORT=9200)
 
 def es_logging(message,service_name,id):
     index = f"{service_name}_logs-{arrow.now().format('YYYY-MM-DD')}"

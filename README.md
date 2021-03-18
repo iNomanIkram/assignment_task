@@ -19,7 +19,7 @@
 ![](img/unittest.png)
 
 ## Use of mysql docker container as a database
-I have used mysql image to run container on host to communicate with the backend services. Command that were required to configure mysql container are as follow.
+I have used mysql image to run container on host to communicate with the backend services. Command that were required to **configure mysql container** are as follow.
 
 1. Run Container by 
 `docker run  --name mysql_container --rm -d  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=SECRET mysql` 
@@ -27,7 +27,7 @@ I have used mysql image to run container on host to communicate with the backend
 3. Type `mysql -u root -p` and Press Enter. You will be prompt for `PASSWORD`. Enter **Password** and press Enter Key.
 4. create database task;
 
-> Although it database can be created by utilising ENV in docker run command
+
  
 ## Creation front-end for the backend
 Front-end was built using Flask. It is a separate flask project, which will be containerized on later stage.

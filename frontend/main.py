@@ -8,7 +8,7 @@ from elasticsearch import Elasticsearch
 from Functions.functions import es_logging, set_logger
 
 id = 0
-es = Elasticsearch(HOST='http://127.0.0.1',PORT=9200)
+es = Elasticsearch(HOST='http://elasticsearch',PORT=9200)
 
 try:
     es.indices.create(index="frontend_logs")
@@ -59,7 +59,7 @@ def login():
         logger.critical(f'{service_name}_logs:{arrow.now().format("YYYY-MM-DD")}:failed_cannot_be_empty')
         return render_template('index.html', info=f'username or password field can not be empty')
 
-    r = requests.post("http://localhost:5000/user/login", params={'username': username, f'password': f'{password}'})
+    r = requests.post("http://backend:5000/user/login", params={'username': username, f'password': f'{password}'})
 
     if r.status_code == 200:
         message = f'{service_name}_logs:{arrow.now().format("YYYY-MM-DD")}:valid_user'
@@ -108,7 +108,7 @@ def register():
         logger.critical(f'{service_name}_logs-{arrow.now().format("YYYY-MM-DD")}:password_not_same')
         return render_template('index.html', rinfo=f'password and confirm password not same')
 
-    r = requests.post("http://localhost:5000/user/register", params={'username': username, f'password': f'{password}'})
+    r = requests.post("http://backend:5000/user/register", params={'username': username, f'password': f'{password}'})
 
     if r.status_code == 200:
         es_logging('registration_success', service_name, id)
