@@ -14,7 +14,9 @@
 * These testcases include checking against if new users are adding into the table, for wrong credentials for authentication, authentication real user.
 * You can run these testcases for backend service, by first moving to the `backend` directory.
 * Before running application, by starting the **backend service** along with **mysql docker container**
-* After that run cmd `python unit_test.py` to run these testcase.
+* After that run cmd `python3 -m unittest discover -s ./ -p '*_test.py'` to run these testcase.
+
+![](img/unittest.png)
 
 ## Use of mysql docker container as a database
 I have used mysql image to run container on host to communicate with the backend services. Command that were required to configure mysql container are as follow.
@@ -27,12 +29,25 @@ I have used mysql image to run container on host to communicate with the backend
 
 > Although it database can be created by utilising ENV in docker run command
  
-## Creatation front-end for the backend
+## Creation front-end for the backend
 Front-end was built using Flask. It is a separate flask project, which will be containerized on later stage.
 
 * For demonstrating registering and authentication, I've created a single page with two separate forms i.e. one for authentication and another for registeration.
 * These forms have some validation applied i.e. both fields can not be empty, password & confirm password should be same while registering etc
 * Both of these forms shows some **indication/response text** on submitting form in message text field situated below individual form.
+
+#### **Registering new user**
+![](img/register1.png) 
+#### **Message displayed on Registration**
+![](img/register2.png)
+#### **Registration failed when trying to register with same username**
+![](img/register3.png)
+#### **Login with same user registered earlier**
+![](img/login1.png)
+#### **Login failed with invalid credentials**
+![](img/login2.png)
+
+
 
 ## Frontend and backend writing logs to elasticsearch
 * In order to work with elasticsearch, I ran a container using command 
@@ -52,7 +67,13 @@ Front-end was built using Flask. It is a separate flask project, which will be c
 
 
 This statement will help you see the list of results.
-`print(es.search(index='logs'))` 
+`print(es.search(index='register_frontend_service_call_logs_logs-2021-03-18'))`. This statement is present in backend project in the file named as `es.py`
+
+![](img/es1.png)
+
+Applying some formatting to view the result in properly formatted form.
+
+![](img/es2.png)
 
 ## Containerize both services
 Both of these containers were build and pushed into docker registry mentioned below
@@ -62,8 +83,11 @@ Both of these containers were build and pushed into docker registry mentioned be
 
 These images can be pulled from docker using `docker pull` command
 
+![](img/docker.png)
+
 ## Push the code to the Github Repository
 Code is moved into the github repo, which can be accessed by following `https://github.com/iNomanIkram/assignment_task`
 
+![](img/repo.png)
 
 
