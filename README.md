@@ -90,4 +90,11 @@ Code is moved into the github repo, which can be accessed by following `https://
 
 ![](img/repo.png)
 
+## CI pipeline by using Github actions
+Continous Integration Pipeline created for building the docker image and push it to docker hub
+
+![](img/code.png)
+
+![](img/gitaction.png)
+
 
