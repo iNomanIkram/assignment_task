@@ -10,7 +10,7 @@ COPY . /app/
 # COPY . nlib /app/
 
 ## Step 3:
-RUN pip3 install --trusted-host pypi.python.org -r backend/requirements.txt
+RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 # hadolint ignore=DL3013
 #RUN python3 -m unittest discover -s ./backend -p '*_test.py'
 
