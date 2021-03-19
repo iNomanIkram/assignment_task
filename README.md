@@ -56,7 +56,7 @@ Front-end was built using Flask. It is a separate flask project, which will be c
 * Inside both project i.e. frontend and backend. I installed a package called `elasticsearch`  through pipe. 
 * Created index for elasticsearch for both services
 * Logs were inserted into index `format:: <service-name>_logs-YYYY-mm-dd` with **id** and **doc** (message/log)
-* After getting some logs into elasticsearch, run queury `body = {
+<!--* After getting some logs into elasticsearch, run queury `body = {
     "from":0,
     "size":5,
     "query": {
@@ -65,9 +65,9 @@ Front-end was built using Flask. It is a separate flask project, which will be c
         }
     }
 }`
+-->
 
-
-This statement will help you see the list of results.
+This statement will help you see the list of result corresponding to index.
 `print(es.search(index='register_frontend_service_call_logs_logs-2021-03-18'))`. This statement is present in backend project in the file named as `es.py`
 
 ![](img/es1.png)
