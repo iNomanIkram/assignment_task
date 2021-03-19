@@ -44,10 +44,11 @@ Front-end was built using Flask. It is a separate flask project, which will be c
 ![](img/register3.png)
 #### **Login with same user registered earlier**
 ![](img/login1.png)
-#### **Login failed with invalid credentials**
 ![](img/login2.png)
+#### **Login failed with invalid credentials**<!---->
+![](img/login3.png)
 
-
+> Password fields could be used for getting password, used only textfields for demonstration purpose
 
 ## Frontend and backend writing logs to elasticsearch
 * In order to work with elasticsearch, I ran a container using command 
