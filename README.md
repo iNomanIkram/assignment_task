@@ -67,7 +67,7 @@ Front-end was built using Flask. It is a separate flask project, which will be c
 }`
 -->
 
-This statement will help you see the list of result corresponding to index.
+This statement will help you see the list of result from search.
 `print(es.search(index='register_frontend_service_call_logs_logs-2021-03-18'))`. This statement is present in backend project in the file named as `es.py`
 
 ![](img/es1.png)
